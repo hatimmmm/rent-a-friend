@@ -2,7 +2,7 @@ class CreateRequests < ActiveRecord::Migration[7.1]
   def change
     create_table :requests do |t|
       t.string :message
-      t.references :user, :listing
+      t.references :user, :listing , null: false, foreign_key: true
 
       t.timestamps
     end

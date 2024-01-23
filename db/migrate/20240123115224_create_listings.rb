@@ -4,6 +4,7 @@ class CreateListings < ActiveRecord::Migration[7.1]
       t.string :title
       t.string :content
       t.string :image_url
+      t.boolean :availability
       t.references :user
 
       t.timestamps

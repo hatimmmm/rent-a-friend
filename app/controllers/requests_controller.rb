@@ -1,10 +1,6 @@
 class RequestsController < ApplicationController
   before_action :set_request, only: :destroy
 
-  def new
-    @request = request.new
-  end
-
   def create
     @request = request.new(request_params)
     @request.save

@@ -14,8 +14,17 @@ class ListingsController < ApplicationController
   end
 
   def create
-    @listing = List.new(listing_params)
-    @listing.save
+    @listing = Listing.new(listing_params)
+
+    respond_to do |format|
+      if @listing.save
+        format.html { redirect_to listing_path(@listing) }
+        format.json # Follows the classic Rails flow and look for a create.json view
+      else
+        format.html { render "listing/new", status: :unprocessable_entity }
+        format.json # Follows the classic Rails flow and look for a create.json view
+      end
+    end
   end
 
   def destroy

@@ -1,0 +1,59 @@
+<div class="container h-100 py-3">
+  <h1 class = "mb-3">Hello <%= current_user.first_name %></h1>
+  <div class="row h-100 gap-3">
+    <div class="col border rounded-3 bg-light shadow-sm overflow-auto p-3">
+      <h4>Latest requests</h4>
+      <% @requests.each do |request|%>
+        <div class="row border rounded p-2">
+          <div class="col-2"><img class="avatar" style="height: 50px; width:50px; object-fit:cover;" src="<%=request.user.avatar_url%>" alt=""></div>
+          <div class="col d-flex align-items-center"><%=request.user.first_name%> <%=request.user.last_name%></div>
+          <div class="col d-flex ms-auto justify-content-end align-items-center"><a href="requests/<%=request.id%>" class="btn btn-outline btn-primary">See request</a> </div>
+        </div>
+      <%end%>
+    </div>
+    <div class="col border bg-light shadow-sm overflow-auto p-3 rounded">
+      <h4>Latest reviews</h4>
+    </div>
+    <div class="col-12 border rounded overflow-auto bg-light shadow-sm p-3">
+      <h4>My listings</h4>
+      <table class="table table-borderless rounded">
+        <thead>
+          <tr>
+            <th scope="col" >Title</th>
+            <th scope="col">Description</th>
+            <th scope="col" class="text-center">Availability</th>
+            <th scope="col" class="text-center">Requests</th>
+            <th scope="col">Created</th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <%@listings.each do |listing|%>
+            <tr>
+              <td>
+                <a class="text-dark" href="/listings/<%=listing.id%>">
+                  <%=listing.title%>
+                </a>
+              </td>
+              <td><span class="d-inline-block text-truncate" style="max-width: 300px;"><%=listing.content%></span></td>
+              <td class="text-center"><i class="<%= listing.availability ? "fa-solid fa-circle-check" : "fa-solid fa-circle-xmark"%>"></i></td>
+              <td class="text-center"><%=listing.requests.count %></td>
+              <td><%=listing.created_at %></td>
+              <td>
+                <div class="dropdown">
+                  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Dropdown button
+                  </button>
+                  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href="#">Action</a>
+                    <a class="dropdown-item" href="#">Another action</a>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                  </div>
+                </div>
+              </tr>
+            <%end%>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>

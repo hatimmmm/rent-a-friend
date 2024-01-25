@@ -1,44 +1,47 @@
 class ListingsController < ApplicationController
-  before_action :set_listing, only: [:show, :destroy]
-
-  def index
-    @listing = Listing.all
-  end
-
-  def show
-    @listing = Listing.find(params[:id])
-  end
-
-  def new
-    @listings = Listing.new
-  end
-
-  def create
-    @listing = Listing.new(listing_params)
-
-    respond_to do |format|
-      if @listing.save
-        format.html { redirect_to listing_path(@listing) }
-        format.json # Follows the classic Rails flow and look for a create.json view
-      else
-        format.html { render "listing/new", status: :unprocessable_entity }
-        format.json # Follows the classic Rails flow and look for a create.json view
-      end
+    def index
+        @listings = Listing.all
     end
-  end
 
-  def destroy
-    @listing.destroy
-    redirect_to index_path
-  end
+    def show
+        @listing = Listing.find(params[:id])
+        @request = Request.new
+    end
 
-  private
+    def new
+        @listing = Listing.new
+    end
 
-  def set_listing
-    @listing = Listing.find(params[:id])
-  end
+    def create
+        @listing = Listing.new(listing_params)
+        @listing.user = current_user
+        if @listing.save
+            redirect_to listing_path(@listing)
+        else
+            render :new
+        end
+    end
 
-  def listing_params
-    params.require(:listing).permit(:title, :content)
-  end
+    def edit
+        @listing = Listing.find(params[:id])
+    end
+
+    def update
+        @listing = Listing.find(params[:id])
+        @listing.update(listing_params)
+        redirect_to listing_path(@listing)
+    end
+
+    def destroy
+        @listing = Listing.find(params[:id])
+        @listing.destroy
+        redirect_to listings_path
+    end
+
+    private
+
+    def listing_params
+        params.require(:listing).permit(:title, :content)
+    end
+
 end

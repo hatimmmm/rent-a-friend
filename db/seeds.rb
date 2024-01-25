@@ -160,20 +160,20 @@ Listing.create({
 
 # # _______________--------______________-------
 
-Request.create({
-                 message: "Please please please please please",
-                 listing_id: 3
-               })
+# Request.create({
+#                  message: "Please please please please please",
+#                  listing_id: 3
+#                })
 
-Request.create({
-                message: "Are you dirt",
-                listing_id:
-               })
+# Request.create({
+#                 message: "Are you dirt",
+#                 listing_id:
+#                })
 
-Request.create({
-                message: "Hey girl! I am also not slenderman. We could bond over that.",
-                listing_id:
-               })
+# Request.create({
+#                 message: "Hey girl! I am also not slenderman. We could bond over that.",
+#                 listing_id:
+#                })
 
 puts "#{Listing.count} available friends already ! Don't ask how they got here. They don't know either"
 puts "Happy ?"

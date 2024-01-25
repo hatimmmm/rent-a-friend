@@ -1,0 +1,12 @@
+<div class="container">
+
+      <% @listings.each do |listing| %>
+     <div class="card" style="width: 300px;">
+  <img class="card-img-top object-fit-fill" style="height: 200px" src="<%= listing.image_url %>" alt="Card image cap">
+  <div class="card-body">
+    <h4> <%= listing.title %> </h4>
+    <p class="card-text"><%= listing.content %></p>
+  </div>
+</div>
+        <% end %>
+</div>

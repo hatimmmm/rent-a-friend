@@ -4,5 +4,5 @@ class Listing < ApplicationRecord
   validates :title, presence: true
   validates :content, presence: true
   validates :user_id, presence: true
-  #Ex:- :default =>'' 
+  #Ex:- :default =>''
 end

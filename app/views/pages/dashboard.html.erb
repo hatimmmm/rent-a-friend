@@ -4,10 +4,15 @@
     <div class="col border border-danger rounded-3 bg-light shadow-sm overflow-auto p-4">
       <h4>Latest requests</h4>
       <% @requests.each do |request|%>
-        <div class="row border border-primary rounded p-2 mb-1">
+        <div class="row border border-primary rounded p-2 mb-1 bg-light">
+
           <div class="col-2"><img class="avatar" style="height: 50px; width:50px; object-fit:cover;" src="<%=request.user.avatar_url%>" alt=""></div>
           <div class="col d-flex align-items-center"><%=request.user.first_name%> <%=request.user.last_name%></div>
-          <div class="col d-flex ms-auto justify-content-end align-items-center"><a href="requests/<%=request.id%>" class="btn btn-outline btn-primary">See request</a> </div>
+          <div class="col d-flex ms-auto justify-content-end align-items-center">
+            <button type="button" class="btn btn-success me-1" data-bs-toggle="modal" data-bs-target="#request-modal">Accept</button>
+            <%= button_to "delete", {:controller => :requests,
+      :action => 'destroy', :id => request.id }, :method => :delete %>
+          </div>
         </div>
       <%end%>
     </div>
@@ -15,12 +20,19 @@
       <h4>Latest reviews</h4>
     </div>
     <div class="col-12 border border-danger rounded overflow-auto bg-light shadow-sm p-3">
-      <h4>My listings</h4>
+      <div class="d-flex justify-content-between align-items-center p-2">
+        <div>
+          <h4>My listings</h4>
+        </div>
+        <div><%= link_to 'Create listing', new_listing_path, class: "btn btn-primary" %></div>
+      </div>
+
       <table class="table table-borderless rounded">
         <thead>
           <tr>
             <th scope="col" >Title</th>
             <th scope="col">Description</th>
+            <th scope="col">Price</th>
             <th scope="col" class="text-center">Availability</th>
             <th scope="col" class="text-center">Requests</th>
             <th scope="col">Created</th>
@@ -36,13 +48,14 @@
                 </a>
               </td>
               <td><span class="d-inline-block text-truncate" style="max-width: 300px;"><%=listing.content%></span></td>
+              <td>$<%=listing.price%> / h</td>
               <td class="text-center"><i class="<%= listing.availability ? "fa-solid fa-circle-check" : "fa-solid fa-circle-xmark"%>"></i></td>
               <td class="text-center"><%=listing.requests.count %></td>
-              <td><%=listing.created_at %></td>
+              <td><%=listing.created_at.strftime("%F") %></td>
               <td>
                 <div class="dropdown">
                   <button class="btn btn-danger dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Dropdown button
+                    ...
                   </button>
                   <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                     <a class="dropdown-item" href="#">Action</a>
@@ -56,4 +69,5 @@
         </table>
       </div>
     </div>
+    <!--request modal-->
   </div>

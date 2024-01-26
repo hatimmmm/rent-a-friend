@@ -5,6 +5,7 @@
       <h4>Latest requests</h4>
       <% @requests.each do |request|%>
         <div class="row border border-primary rounded p-2 mb-1 bg-light">
+
           <div class="col-2"><img class="avatar" style="height: 50px; width:50px; object-fit:cover;" src="<%=request.user.avatar_url%>" alt=""></div>
           <div class="col d-flex align-items-center"><%=request.user.first_name%> <%=request.user.last_name%></div>
           <div class="col d-flex ms-auto justify-content-end align-items-center">
@@ -25,6 +26,7 @@
         </div>
         <div><%= link_to 'Create listing', new_listing_path, class: "btn btn-primary" %></div>
       </div>
+
       <table class="table table-borderless rounded">
         <thead>
           <tr>

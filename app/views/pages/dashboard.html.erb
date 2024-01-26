@@ -11,7 +11,8 @@
           <div class="col d-flex ms-auto justify-content-end align-items-center">
             <button type="button" class="btn btn-success me-1" data-bs-toggle="modal" data-bs-target="#request-modal">Accept</button>
             <%= button_to "delete", {:controller => :requests,
-      :action => 'destroy', :id => request.id }, :method => :delete %>
+      :action => 'destroy', :id => request.id }, :method => :delete ,class: "btn btn-danger"%>
+
           </div>
         </div>
       <%end%>
@@ -26,7 +27,6 @@
         </div>
         <div><%= link_to 'Create listing', new_listing_path, class: "btn btn-primary" %></div>
       </div>
-
       <table class="table table-borderless rounded">
         <thead>
           <tr>
@@ -37,6 +37,8 @@
             <th scope="col" class="text-center">Requests</th>
             <th scope="col">Created</th>
             <th scope="col"></th>
+            <th scope="col"></th>
+
           </tr>
         </thead>
         <tbody>
@@ -53,16 +55,9 @@
               <td class="text-center"><%=listing.requests.count %></td>
               <td><%=listing.created_at.strftime("%F") %></td>
               <td>
-                <div class="dropdown">
-                  <button class="btn btn-danger dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    ...
-                  </button>
-                  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <a class="dropdown-item" href="#">Action</a>
-                    <a class="dropdown-item" href="#">Another action</a>
-                    <a class="dropdown-item" href="#">Something else here</a>
-                  </div>
-                </div>
+                <%= button_to "delete", {:controller => :listings,
+      :action => 'destroy', :id => listing.id }, :method => :delete ,class: "btn btn-danger"%>
+              </td>
               </tr>
             <%end%>
           </tbody>

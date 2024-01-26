@@ -17,6 +17,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_01_25_193733) do
   create_table "listings", force: :cascade do |t|
     t.string "title"
     t.string "content"
+
     t.string "image_url"
     t.integer "price"
     t.boolean "availability", default: true
@@ -56,7 +57,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_01_25_193733) do
     t.string "first_name"
     t.string "last_name"
     t.text "bio"
-    t.string "avatar_url"
+    t.string "avatar_url", default: "https://i.imgflip.com/1i34wa.jpg"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

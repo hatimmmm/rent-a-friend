@@ -3,7 +3,9 @@ class RequestsController < ApplicationController
 
   def create
     @request = Request.new(request_params)
-    @request.save!
+    @request.user = current_user
+    @request.save
+
     redirect_to listing_path(@request.listing)
 
   end
@@ -20,6 +22,6 @@ class RequestsController < ApplicationController
   end
 
   def request_params
-    params.require(:request).permit(:message, :user_id, :listing_id)
+    params.require(:request).permit(:message, :listing_id)
   end
 end

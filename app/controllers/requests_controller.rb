@@ -5,6 +5,7 @@ class RequestsController < ApplicationController
     @request = Request.new(request_params)
     @request.user = current_user
     @request.save
+
     redirect_to listing_path(@request.listing)
 
   end

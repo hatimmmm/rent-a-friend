@@ -17,7 +17,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_01_25_193733) do
   create_table "listings", force: :cascade do |t|
     t.string "title"
     t.string "content"
-    t.string "image_url", default: "https://i.imgflip.com/1i34wa.jpg"
+
+    t.string "image_url"
     t.integer "price"
     t.boolean "availability", default: true
     t.bigint "user_id", null: false

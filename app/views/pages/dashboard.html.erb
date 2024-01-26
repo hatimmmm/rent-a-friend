@@ -5,12 +5,14 @@
       <h4>Latest requests</h4>
       <% @requests.each do |request|%>
         <div class="row border border-primary rounded p-2 mb-1 bg-light">
+
           <div class="col-2"><img class="avatar" style="height: 50px; width:50px; object-fit:cover;" src="<%=request.user.avatar_url%>" alt=""></div>
           <div class="col d-flex align-items-center"><%=request.user.first_name%> <%=request.user.last_name%></div>
           <div class="col d-flex ms-auto justify-content-end align-items-center">
             <button type="button" class="btn btn-success me-1" data-bs-toggle="modal" data-bs-target="#request-modal">Accept</button>
             <%= button_to "delete", {:controller => :requests,
       :action => 'destroy', :id => request.id }, :method => :delete ,class: "btn btn-danger"%>
+
           </div>
         </div>
       <%end%>

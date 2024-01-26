@@ -1,6 +1,7 @@
 <div class="container p-3">
   <div class="d-flex h-100 gap-3 ">
     <div class="col-4 h-100 border border-primary"><img class="w-100" src="<%= @listing.image_url ? @listing.image_url : "https://i.imgflip.com/1i34wa.jpg"%>" alt=""></div>
+
     <div class="col-8 h-100">
       <div class="row h-100">
         <div class="col">
@@ -50,6 +51,7 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
+
           <!--<form action="/bookmarks/" method="post">
             <label for="comment" class="mb-2"> Message: </label>
             <input type="text" name="request[message]" id="comment" class="form-control border border-primary">

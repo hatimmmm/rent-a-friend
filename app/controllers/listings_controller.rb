@@ -6,7 +6,9 @@ class ListingsController < ApplicationController
     def show
         @listing = Listing.find(params[:id])
         @request = Request.new
+        @this_request = @listing.requests.find_by(user_id: current_user.id)
         @user = current_user
+
     end
 
     def new
@@ -36,7 +38,7 @@ class ListingsController < ApplicationController
     def destroy
         @listing = Listing.find(params[:id])
         @listing.destroy
-        redirect_to listings_path
+        redirect_to dashboard_path
     end
 
     private

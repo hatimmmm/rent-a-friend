@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <div class="container">
 
       <% @listings.each do |listing| %>
@@ -9,4 +10,22 @@
   </div>
 </div>
         <% end %>
+=======
+<div class="container d-flex flex-wrap align-items-center bg-white gap-3 justify-content-center">
+<h1 class="py-5 w-100 text-center ">Available friends</h1>
+
+  <% @listings.each do |listing| %>
+
+    <div class="card mb-3 border border-danger bg-light text-primary p-3 shadow" style="width: 300px;">
+      <img class="card-img-top object-fit-fill border border-primary mb-3" style="height: 200px" src="<%= listing.image_url %>" alt="Card image cap">
+      <div class="card-body ">
+        <h4 class="d-inline-block text-truncate" style="max-width: 250px;"> <%= listing.title %> </h4>
+        <div></div>
+        <p class="card-text d-inline-block text-truncate" style="max-width: 250px;"><%= listing.content %></p>
+        <p class="card-text">$<%=listing.price%> /Hour</p>
+        <a href="listings/<%=listing.id%>" class="btn btn-primary w-100 " >Request</a>
+      </div>
+    </div>
+  <% end %>
+>>>>>>> 56a960c4cd5851fa781bc1a0378c8d4be5a18125
 </div>

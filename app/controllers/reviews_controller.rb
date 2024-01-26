@@ -6,10 +6,7 @@ class ReviewsController < ApplicationController
 
   def create
     @reviw = Review.new(review_params)
-  end
-
-  def hi_master_ghita
-    puts "Hi master Ghita!"
+    @review.save
   end
 
   private
@@ -18,4 +15,8 @@ class ReviewsController < ApplicationController
     params.require(:review).permit(:content, :rating)
   end
 
+  def set_reviex
+    @review = Review.find(params[:id])
+
+  end
 end

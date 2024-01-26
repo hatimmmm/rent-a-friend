@@ -6,13 +6,14 @@ class ListingsController < ApplicationController
     def show
         @listing = Listing.find(params[:id])
         @request = Request.new
+        @user = current_user
     end
 
     def new
         @listing = Listing.new
     end
-    
     def create
+        
         @listing = Listing.new(listing_params)
         @listing.user = current_user
         if @listing.save
@@ -41,7 +42,7 @@ class ListingsController < ApplicationController
     private
 
     def listing_params
-        params.require(:listing).permit(:title, :content)
+        params.require(:listing).permit(:title, :content, :availability,:price)
     end
 
 end

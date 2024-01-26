@@ -1,17 +1,70 @@
-<div class="container">
-    <h1><%= @listing.title %></h1>
-    <div class="card">
-        <div class="card-body">
-            <h5 class="card-title"><%= @listing.title %></h5>
-            <p class="card-text"><%= @listing.content %></p>
-            <p class="card-text"><small class="text-muted">Price: <%= @listing.availability %></small></p>
+<div class="container p-3">
+  <div class="d-flex h-100 gap-3 ">
+    <div class="col-4 h-100 border border-primary"><img class="w-100" src="<%= @listing.image_url%>" alt=""></div>
+    <div class="col-8 h-100">
+      <div class="row h-100">
+        <div class="col">
+          <div class="card w-100">
+            <div class="card-body border border-danger">
+              <div class="d-flex justify-content-between">
+                <div class="d-flex align-items-center gap-3">
+                  <h5 class="card-title fs-2 text-primary"><%= @listing.title%></h5>
+                  <p class="card-text fs-5 text-secondary "><%= @listing.availability ? "Available" : "Not available"%></p>
+                </div>
+                <div class="d-flex align-items-center gap-2 p-2">
+                  <%=@listing.request.id%>
+                  <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    Send request
+                  </button>
+                  <button type="button" class="btn btn-outline-info">
+                    <i class="fa-regular fa-bookmark "></i>
+                  </button>
+                </div>
+              </div>
+              <p class="card-text text-primary"><%= @listing.content%></p>
+              <div class="d-flex align-items-center">
+                <p class="card-text fs-5 "></p>
+              </div>
+              <div class="d-flex align-items-center justify-content-between">
+                <p class="card-text fs-5 text-secondary">$<%=@listing.price%>/Hour</p>
+                <p class="card-text fs-5 text-secondary"><small><%=@listing.created_at.strftime("%F")%></small></p>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
     </div>
-</div>
+  </div>
+  <!-- Button trigger modal -->
+  <!-- Modal -->
+  <div class="modal fade"  id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-controller="request">
+    <div class="modal-dialog border border-danger">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Add bookmark</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+          <!--<form action="/bookmarks/" method="post">
+            <label for="comment" class="mb-2"> Message: </label>
+            <input type="text" name="request[message]" id="comment" class="form-control border border-primary">
+            <%=hidden_field(:listing, :id)%>
+            <%=hidden_field(:user, :id)%>
+            <div class="modal-footer">
+              <button type="submit" class="btn btn-outline-primary">Send</button>
+            </div>
+          </form>-->
+          <%= simple_form_for @request do |f| %>
+            <%= f.input :message%>
+            <%= f.hidden_field :listing_id, value: @listing.id %>
+            <%= f.hidden_field :user_id, value: current_user.id %>
+            <div class="modal-footer">
+              <%= f.submit "Send", class: "btn btn-outline-primary" %>
+            </div>
+          <% end %>
 
-</body>
-</html>
+        </div>
+      </div>
+    </div>
+  </div>

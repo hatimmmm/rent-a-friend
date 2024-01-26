@@ -2,13 +2,15 @@ class RequestsController < ApplicationController
   before_action :set_request, only: :destroy
 
   def create
-    @request = request.new(request_params)
-    @request.save
+    @request = Request.new(request_params)
+    @request.save!
+    redirect_to listing_path(@request.listing)
+
   end
 
   def destroy
     @request.destroy
-    redirect_to index_path(@request)
+    redirect_to dashboard_path
   end
 
   private
@@ -18,6 +20,6 @@ class RequestsController < ApplicationController
   end
 
   def request_params
-    params.require(:request).permit(:message)
+    params.require(:request).permit(:message, :user_id, :listing_id)
   end
 end

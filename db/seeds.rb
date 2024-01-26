@@ -91,6 +91,7 @@ Listing.create({
                  content: "Made of vinyl plastic and sunshine, John is eager to meet someone like you. He enjoys oxygen and hobbies",
                  image_url: "https://i.ebayimg.com/images/g/kL4AAOSwIV1irkjo/s-l1200.webp",
                  user_id: 1,
+                 price: 8
                })
 
 Listing.create({
@@ -98,6 +99,7 @@ Listing.create({
                  content: "I will not kidnap you",
                  image_url: "https://www.realite-virtuelle.com/wp-content/uploads/2019/07/slender-man.jpg",
                  user_id: 2,
+                 price: 12
                })
 
 Listing.create({
@@ -105,6 +107,7 @@ Listing.create({
                  content: "I am a rat. I have been given the gift of speech. If you have cheese, we can chat",
                  image_url: "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/42f36d6d-34cc-4edf-906d-4b23f63c860f/d5b1060-421ae1b9-888d-4e5b-9a79-168f34caa387.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzQyZjM2ZDZkLTM0Y2MtNGVkZi05MDZkLTRiMjNmNjNjODYwZlwvZDViMTA2MC00MjFhZTFiOS04ODhkLTRlNWItOWE3OS0xNjhmMzRjYWEzODcuanBnIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.5Otwc6wmc0TqOhaTQphSrW8eTQrreOhLOOpc28c3pi4",
                  user_id: 3,
+                 price: 6
                })
 
 Listing.create({
@@ -112,6 +115,7 @@ Listing.create({
                  content: "I am not a horse. Or hispanic. I am only here because of thieves. I mean friends. I mean--",
                  image_url: "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/42f36d6d-34cc-4edf-906d-4b23f63c860f/d5b1060-421ae1b9-888d-4e5b-9a79-168f34caa387.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzQyZjM2ZDZkLTM0Y2MtNGVkZi05MDZkLTRiMjNmNjNjODYwZlwvZDViMTA2MC00MjFhZTFiOS04ODhkLTRlNWItOWE3OS0xNjhmMzRjYWEzODcuanBnIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.5Otwc6wmc0TqOhaTQphSrW8eTQrreOhLOOpc28c3pi4",
                  user_id: 1,
+                 price: 16
                })
 
 Listing.create({
@@ -119,6 +123,7 @@ Listing.create({
                  content: "Not looking. Just staring. Sparky personality. Detachable parts.",
                  image_url: "https://i0.wp.com/abbiedabbles.com/wp-content/uploads/2021/02/Chancellor-Palpatine.png?fit=1000%2C1000",
                  user_id: 2,
+                 price: 11
                })
 
 Listing.create({
@@ -126,6 +131,7 @@ Listing.create({
                  content: "You want dirt",
                  image_url: "https://images.squarespace-cdn.com/content/v1/5afb3e45c3c16a7c94e9e2f7/1529569401418-0UZ3MKEHC64SZ4CPODL2/FillDirt.jpg?format=1000w",
                  user_id: 3,
+                 price: 99
                })
 
 Listing.create({
@@ -133,6 +139,7 @@ Listing.create({
                  content: "Carl",
                  image_url: "https://image.spreadshirtmedia.com/image-server/v1/compositions/T993A1PA2168PT10X82Y81D1044215438W8095H4609/views/1,width=550,height=550,appearanceId=1,backgroundColor=FFFFFF,noPt=true/carl-custom-name-font-text-birthday-mouse-pad.jpg",
                  user_id: 1,
+                 price: 1
                })
 
 # # _______________--------______________-------

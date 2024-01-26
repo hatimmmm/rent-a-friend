@@ -1,0 +1,11 @@
+<div class="container p-5">
+  <h1>Create a listing</h1>
+  <%=simple_form_for @listing do |f|%>
+    <%=f.input :title%>
+    <%=f.label :content, "description"%>
+    <%=f.text_area :content, class: "form-control"%>
+    <%=f.input :price%>
+    <%=f.input :availability%>
+    <%=f.submit :create, class: "btn btn-primary"%>
+  <%end%>
+</div>

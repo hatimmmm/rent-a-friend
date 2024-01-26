@@ -5,18 +5,15 @@ class ReviewsController < ApplicationController
   end
 
   def create
-    @reviw = Review.new(review_params)
+    @review = Review.new(review_params)
+    @user = User.find(params[:user_id])
+    @review.user = @user
     @review.save
   end
 
   private
 
   def review_params
-    params.require(:review).permit(:content, :rating)
-  end
-
-  def set_reviex
-    @review = Review.find(params[:id])
-
+    params.require(:review).permit(:comment, :rating)
   end
 end

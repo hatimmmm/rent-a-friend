@@ -17,6 +17,28 @@
     </div>
     <div class="col border bg-light border-danger shadow-sm overflow-auto p-3 rounded">
       <h4>Latest reviews</h4>
+      <div class="card border-success mb-3 w-100" ">
+        <div class="card-header bg-transparent border-success d-flex justify-content-start align-items-center gap-2">
+          <div class="" style="height: 30px;width:30px">
+            <img class="w-100 h-100 rounded-circle border" src="http://t2.gstatic.com/images?q=tbn:ANd9GcRNebVdI7Yd1WPuAz6xOHtPuy8fme6Mt6O6gTwRPpCrau2qj_TWgiB2_gfYLxIT2idB6Y7p" alt="">
+          </div>
+          <div>
+            <h5 class="card-title">Yoda</h5>
+          </div>
+        </div>
+        <div class="card-body">
+          <p class="card-text">had a great time man</p>
+        </div>
+        <div class="card-footer bg-transparent border-success">
+          <div class="d-flex justify-content-start align-items-center">
+            <i class="fa-solid fa-star text-info"></i>
+            <i class="fa-solid fa-star text-info"></i>
+            <i class="fa-solid fa-star text-info"></i>
+            <i class="fa-solid fa-star text-info"></i>
+            <i class="fa-solid fa-star text-info"></i>
+          </div>
+        </div>
+      </div>
     </div>
     <div class="col-12 border border-danger rounded overflow-auto bg-light shadow-sm p-3">
       <div class="d-flex justify-content-between align-items-center p-2">
@@ -36,7 +58,6 @@
             <th scope="col">Created</th>
             <th scope="col"></th>
             <th scope="col"></th>
-
           </tr>
         </thead>
         <tbody>
@@ -56,11 +77,11 @@
                 <%= button_to "delete", {:controller => :listings,
       :action => 'destroy', :id => listing.id }, :method => :delete ,class: "btn btn-danger"%>
               </td>
-              </tr>
-            <%end%>
-          </tbody>
-        </table>
-      </div>
+            </tr>
+          <%end%>
+        </tbody>
+      </table>
     </div>
-    <!--request modal-->
   </div>
+  <!--request modal-->
+</div>

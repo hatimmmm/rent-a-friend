@@ -4,6 +4,8 @@ class ListingsController < ApplicationController
     end
 
     def show
+        @review = Review.new
+
         @listing = Listing.find(params[:id])
         @request = Request.new
         @this_request = @listing.requests.find_by(user_id: current_user.id)

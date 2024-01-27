@@ -17,7 +17,7 @@
                       Sent
                     </button>
                   <%elsif @listing.user_id == current_user.id%>
-                  <%= link_to "Edit",edit_listing_path, class: "btn btn-outline-primary"%>
+                    <%= link_to "Edit",edit_listing_path, class: "btn btn-outline-primary"%>
                   <%else%>
                     <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
                       Request
@@ -40,10 +40,24 @@
           </div>
         </div>
       </div>
+      <% if @listing.user.id != current_user.id%>
+      <div class="bg-danger p-3 mt-3">
+        <h4 class="text-white my-4">Send a review</h4>
+        <%= simple_form_for @review  do |f|%>
+        <%= f.input :comment%>
+        <%= f.input :rating%>
+        <%= f.hidden_field :listing_id, value: @listing.id, class: "form-control border border-danger" %>
+        <%= f.hidden_field :customer_id, value: current_user.id %>
+        <%= f.submit "Send", class: "btn btn-primary"%>
+      <%end%>
+      <%end%>
+      </div>
+      
     </div>
   </div>
   <!-- Button trigger modal -->
   <!-- Modal -->
+  <!-- request modal -->
   <div class="modal"  id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-controller="request">
     <div class="modal-dialog border border-danger">
       <div class="modal-content">

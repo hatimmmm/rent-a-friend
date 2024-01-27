@@ -11,6 +11,14 @@ class RequestsController < ApplicationController
 
   def destroy
     @request.destroy
+    flash[:notice] = "Request successfully deleted."
+    redirect_to dashboard_path
+  end
+
+  def accept
+    @request = Request.find(params[:id])
+    @request.accepted = true
+    @request.save
     redirect_to dashboard_path
   end
 

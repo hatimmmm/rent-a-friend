@@ -1,86 +1,21 @@
 <div class="container h-100 py-3">
-  <h1 class = "mb-3">Hello <%= current_user.first_name %></h1>
+  <h1 class = "mb-3">Hello <%= current_user.full_name %></h1>
   <div class="row h-100 gap-3">
-    <div class="col border border-danger rounded-3 bg-light shadow-sm overflow-auto p-4">
+    <div class="col-12 col-md-6 border border-danger rounded bg-light shadow-sm p-3" id="requests">
       <h4>Latest requests</h4>
-      <% @requests.each do |request|%>
-        <div class="row border border-primary rounded p-2 mb-1 bg-light">
-          <div class="col-2"><img class="avatar" style="height: 50px; width:50px; object-fit:cover;" src="<%=request.user.avatar_url%>" alt=""></div>
-          <div class="col d-flex align-items-center"><%=request.user.first_name%> <%=request.user.last_name%></div>
-          <div class="col d-flex ms-auto justify-content-end align-items-center">
-            <button type="button" class="btn btn-success me-1" data-bs-toggle="modal" data-bs-target="#request-modal">Accept</button>
-            <%= button_to "delete", {:controller => :requests,
-      :action => 'destroy', :id => request.id }, :method => :delete ,class: "btn btn-danger"%>
-          </div>
-        </div>
-      <%end%>
+      <%= render(RequestComponent.with_collection(@requests)) %>
     </div>
-    <div class="col border bg-light border-danger shadow-sm overflow-auto p-3 rounded">
-      <h4>Latest reviews</h4>
-      <div class="card border-success mb-3 w-100" ">
-        <div class="card-header bg-transparent border-success d-flex justify-content-start align-items-center gap-2">
-          <div class="" style="height: 30px;width:30px">
-            <img class="w-100 h-100 rounded-circle border" src="http://t2.gstatic.com/images?q=tbn:ANd9GcRNebVdI7Yd1WPuAz6xOHtPuy8fme6Mt6O6gTwRPpCrau2qj_TWgiB2_gfYLxIT2idB6Y7p" alt="">
-          </div>
-          <div>
-            <h5 class="card-title">Yoda</h5>
-          </div>
-        </div>
-        <div class="card-body">
-          <p class="card-text">had a great time man</p>
-        </div>
-        <div class="card-footer bg-transparent border-success">
-          <div class="d-flex justify-content-start align-items-center">
-            <i class="fa-solid fa-star text-info"></i>
-            <i class="fa-solid fa-star text-info"></i>
-            <i class="fa-solid fa-star text-info"></i>
-            <i class="fa-solid fa-star text-info"></i>
-            <i class="fa-solid fa-star text-info"></i>
-          </div>
-        </div>
-      </div>
+    <div class="col border bg-light border-danger shadow-sm overflow-auto p-3 rounded" id="reviews">
+      <%= render(ReviewComponent.with_collection(@reviews)) %>
     </div>
-    <div class="col-12 border border-danger rounded overflow-auto bg-light shadow-sm p-3">
+    <div class="col-12 border border-danger rounded bg-light shadow-sm p-3" id="listings">
       <div class="d-flex justify-content-between align-items-center p-2">
         <div>
           <h4>My listings</h4>
         </div>
         <div><%= link_to 'Create listing', new_listing_path, class: "btn btn-primary" %></div>
       </div>
-      <table class="table table-borderless rounded">
-        <thead>
-          <tr>
-            <th scope="col" >Title</th>
-            <th scope="col">Description</th>
-            <th scope="col">Price</th>
-            <th scope="col" class="text-center">Availability</th>
-            <th scope="col" class="text-center">Requests</th>
-            <th scope="col">Created</th>
-            <th scope="col"></th>
-            <th scope="col"></th>
-          </tr>
-        </thead>
-        <tbody>
-          <%@listings.each do |listing|%>
-            <tr>
-              <td>
-                <a class="text-dark" href="/listings/<%=listing.id%>">
-                  <%=listing.title%>
-                </a>
-              </td>
-              <td><span class="d-inline-block text-truncate" style="max-width: 300px;"><%=listing.content%></span></td>
-              <td>$<%=listing.price%> / h</td>
-              <td class="text-center"><i class="<%= listing.availability ? "fa-solid fa-circle-check" : "fa-solid fa-circle-xmark"%>"></i></td>
-              <td class="text-center"><%=listing.requests.count %></td>
-              <td><%=listing.created_at.strftime("%F") %></td>
-              <td>
-                <%= button_to "delete", {:controller => :listings,
-      :action => 'destroy', :id => listing.id }, :method => :delete ,class: "btn btn-danger"%>
-              </td>
-            </tr>
-          <%end%>
-        </tbody>
-      </table>
+      <%= render(ListingsComponent.new(listings: @listings))%>
     </div>
   </div>
   <!--request modal-->

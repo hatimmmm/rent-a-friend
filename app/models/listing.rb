@@ -6,4 +6,12 @@ class Listing < ApplicationRecord
   validates :user_id, presence: true
   validates :price, presence: true
   #Ex:- :default =>''
+
+  def user
+    User.find_by(id: self.user_id)
+  end
+
+  def requests
+    Request.where(listing_id: self.id)
+  end
 end

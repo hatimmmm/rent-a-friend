@@ -1,0 +1,38 @@
+<table class="table table-borderless rounded">
+  <thead>
+    <tr>
+      <th scope="col" >Title</th>
+      <th scope="col">Description</th>
+      <th scope="col">Price</th>
+      <th scope="col" class="text-center">Availability</th>
+      <th scope="col" class="text-center">Requests</th>
+      <th scope="col">Created</th>
+      <th scope="col"></th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <%@listings.each do |listing|%>
+      <tr>
+        <td>
+          <a class="text-dark" href="/listings/<%=listing.id%>">
+            <%=listing.title%>
+          </a>
+        </td>
+        <td><span class="d-inline-block text-truncate" style="max-width: 300px;"><%=listing.content%></span></td>
+        <td>$<%=listing.price%> / h</td>
+        <td class="text-center"><i class="<%= listing.availability ? "fa-solid fa-circle-check" : "fa-solid fa-circle-xmark"%>"></i></td>
+        <td class="text-center"><%=listing.requests.count %></td>
+        <td><%=listing.created_at.strftime("%F") %></td>
+        <td class="d-flex gap-1">
+          <%= button_to(listing_path(listing), method: :delete, class: 'btn btn-danger') do %>
+            <i class="fas fa-trash"></i>
+          <% end %>
+          <%= link_to edit_listing_path(listing), class: 'btn btn-info' do %>
+            <i class="fas fa-edit"></i>
+          <% end %>
+        </td>
+      </tr>
+    <%end%>
+  </tbody>
+</table>

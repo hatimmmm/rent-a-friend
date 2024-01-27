@@ -28,6 +28,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_01_25_193733) do
 
   create_table "requests", force: :cascade do |t|
     t.string "message"
+    t.boolean "accepted", default: false
     t.bigint "user_id", null: false
     t.bigint "listing_id", null: false
     t.datetime "created_at", null: false

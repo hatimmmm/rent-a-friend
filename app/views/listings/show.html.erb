@@ -7,7 +7,7 @@
           <div class="card w-100">
             <div class="card-body border border-danger">
               <div class="d-flex justify-content-between">
-                <div class="d-flex align-items-center gap-3">
+                <div class="d-flex align-items-center gap-3 w-75">
                   <h5 class="card-title fs-2 text-primary"><%= @listing.title%></h5>
                   <p class="card-text fs-5 text-secondary "><%= @listing.availability ? "Available" : "Not available"%></p>
                 </div>
@@ -16,9 +16,11 @@
                     <button type="button" class="btn btn-outline-success disabled" data-bs-toggle="modal" data-bs-target="#exampleModal">
                       Sent
                     </button>
+                  <%elsif @listing.user_id == current_user.id%>
+                  <%= link_to "Edit",edit_listing_path, class: "btn btn-outline-primary"%>
                   <%else%>
                     <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                      Send request
+                      Request
                     </button>
                   <%end%>
                   <button type="button" class="btn btn-outline-info">
@@ -50,15 +52,6 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          <!--<form action="/bookmarks/" method="post">
-            <label for="comment" class="mb-2"> Message: </label>
-            <input type="text" name="request[message]" id="comment" class="form-control border border-primary">
-            <%=hidden_field(:listing, :id)%>
-            <%=hidden_field(:user, :id)%>
-            <div class="modal-footer">
-              <button type="submit" class="btn btn-outline-primary">Send</button>
-            </div>
-          </form>-->
           <%= simple_form_for @request do |f| %>
             <%= f.input :message%>
             <%= f.hidden_field :listing_id, value: @listing.id %>

@@ -10,5 +10,6 @@ Rails.application.routes.draw do
   get "up" => "rails/health#show", as: :rails_health_check
   get "/dashboard", to: "pages#dashboard" ,as: :dashboard
   post "/requests/:id/accept", to: "requests#accept", as: :accept_request
+  get "/profile", to: "pages#profile"
 
 end

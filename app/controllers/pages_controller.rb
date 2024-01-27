@@ -8,4 +8,8 @@ class PagesController < ApplicationController
     @reviews = @user.reviews
 
   end
+
+  def profiles
+    @user = current_user
+  end
 end

@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 class CreateListings < ActiveRecord::Migration[7.1]
   def change
     create_table :listings do |t|
@@ -14,4 +12,3 @@ class CreateListings < ActiveRecord::Migration[7.1]
     end
   end
 end
->>>>>>> fe7aef3cde5bd8bdf735503dfc2076811e1c20d6

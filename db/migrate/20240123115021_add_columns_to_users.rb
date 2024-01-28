@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 class AddColumnsToUsers < ActiveRecord::Migration[7.1]
   def change
     add_column :users, :first_name, :string
@@ -9,4 +7,3 @@ class AddColumnsToUsers < ActiveRecord::Migration[7.1]
     #Ex:- :default =>''
   end
 end
->>>>>>> fe7aef3cde5bd8bdf735503dfc2076811e1c20d6

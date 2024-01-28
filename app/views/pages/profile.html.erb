@@ -1,50 +1,51 @@
 <div class="d-flex flex-row">
-  <%=render "shared/sidebar"%>
-  <div class="d-flex flex-column m-2">
-    <div class="d-flex flex-row justify-content-around">
-      <div class="bg-warning w-25">
-        <h5>Bio</h6>
-        <p>I am a famous horse you know me! No picyures please!</p>
+  <div class="h-100"><%=render "shared/sidebar" %></div>
+  <div class="d-flex flex-column me-3">
+    <div class="d-flex justify-content-between w-100 my-3 mx-4">
+      <div class="w-25 px-3 bg-danger rounded">
+        <h4 class="text-primary py-2">Bio</h4>
+        <p class="text-primary">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.</p>
       </div>
-    <div class="bg-warning w-50">
-        <p>Horseman🎵<br>
-        Horsin'Around 🎥 <br>
-        Wine 🍷 </p>
+      <div class="w-25 bg-danger px-2 rounded">
+        <h4 class="text-primary py-2 ">Things I like</h4>
+        <a class="text-primary my-2" href="https://www.youtube.com/watch?v=Ulz7r_uA6xc&ab_channel=AdultSwim">Human music 🎵</a> <br>
+        <a class="text-primary my-2" href="https://www.imdb.com/title/tt0114814/">Usual Suspect 🎥</a> <br>
+        <a class="text-primary my-2" href="https://www.goodreads.com/book/show/4865.How_to_Win_Friends_and_Influence_People"> How to make friends... 📖</a>
+      </div>
+      <div class="w-25 bg-danger me-5 p-3 d-flex flex-row justify-content-evenly d-inline">
+        <p class="text-primary">Introvert</p>
+          <div class=" progress-bar w-100 bg-light border border-dark rounded">
+            <div class="pl-3 w-25 h-100"><span class="w-25 h-100 d-inline rounded"><p class="bg-dark">||</p></span></div>
+          </div>
+        <p class="text-primary">Extrovert</p>
+      </div>
     </div>
-  </div>
-  <hr>
-
-  <div class="d-flex align-items-start" ">
-
-      <div class="h-100 w-100">
-        <div class="container-fluid  w-75 my-3">
-          <div id="carouselExample" class="carousel slide h- w-100">
-            <div class="carousel-inner">
-              <div class="carousel-item active h-100 w-100">
-                <img class="picc" src="https://www.looper.com/img/gallery/the-truth-about-the-bojack-horseman-theme-song/intro-1610463458.jpg" alt="...">
-              </div>
-              <div class="carousel-item active h-100 w-100">
-                <img class="picc" src="https://upload.wikimedia.org/wikipedia/en/6/6f/BoJack_Horseman_season_1.png"
-                alt="...">
-              </div>
-            </div>
-            <hr>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Next</span>
-            </button>
+    <div class="d-flex justify-content-center h-100 my-6 mx-1">
+      <div id="carouselExampleIndicators" class="carousel slide w-100 h-75 m-3 d-flex rounded border border-dark" data-ride="carousel">
+        <div class="h-100 carousel-inner">
+          <div class="carousel-item active h-100 w-100">
+            <img class="d-block w-100 h-100" src="https://st4.depositphotos.com/13194036/19656/i/450/depositphotos_196568520-stock-photo-undercover-male-agent-sunglasses-doing.jpg" alt="First slide">
+          </div>
+          <div class="carousel-item active">
+            <img class="d-block w-100 h-100" src="https://st4.depositphotos.com/13194036/19656/i/450/depositphotos_196568520-stock-photo-undercover-male-agent-sunglasses-doing.jpg" alt="Second slide">
+          </div>
+          <div class="carousel-item w-100 h-100 active">
+            <img class="d-block w-100 h-100" src="https://st4.depositphotos.com/13194036/19656/i/450/depositphotos_196568520-stock-photo-undercover-male-agent-sunglasses-doing.jpg" alt="Third slide">
           </div>
         </div>
-        <div>
-          <h5></h5>
-        </div>
-        <div></div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
       </div>
-
     </div>
-  </div>
+    <script>
+      $(document).ready(function(){
+        $('.carousel').carousel();
+      });
+  </script>
 </div>

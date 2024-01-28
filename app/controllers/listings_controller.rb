@@ -6,12 +6,16 @@ class ListingsController < ApplicationController
     def show
         @listing = Listing.find(params[:id])
         @request = Request.new
+        @this_request = @listing.requests.find_by(user_id: current_user.id)
+        @user = current_user
+
     end
 
     def new
         @listing = Listing.new
     end
     def create
+        
         @listing = Listing.new(listing_params)
         @listing.user = current_user
         if @listing.save
@@ -34,13 +38,13 @@ class ListingsController < ApplicationController
     def destroy
         @listing = Listing.find(params[:id])
         @listing.destroy
-        redirect_to listings_path
+        redirect_to dashboard_path
     end
 
     private
 
     def listing_params
-        params.require(:listing).permit(:title, :content)
+        params.require(:listing).permit(:title, :content, :availability,:price)
     end
 
 end

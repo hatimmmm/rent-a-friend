@@ -9,7 +9,7 @@
         <h4 class="d-inline-block text-truncate" style="max-width: 250px;"> <%= listing.title %> </h4>
         <div></div>
         <p class="card-text d-inline-block text-truncate" style="max-width: 250px;"><%= listing.content %></p>
-        <p class="card-text">$10/Hour</p>
+        <p class="card-text">$<%=listing.price%> /Hour</p>
         <a href="listings/<%=listing.id%>" class="btn btn-primary w-100 " >Request</a>
       </div>
     </div>

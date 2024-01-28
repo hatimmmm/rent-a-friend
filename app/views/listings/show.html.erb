@@ -1,6 +1,7 @@
 <div class="container p-3">
   <div class="d-flex h-100 gap-3 ">
-    <div class="col-4 h-100 border border-primary"><img class="w-100" src="<%= @listing.image_url%>" alt=""></div>
+    <div class="col-4 h-100 border border-primary"><img class="w-100" src="<%= @listing.image_url ? @listing.image_url : "https://i.imgflip.com/1i34wa.jpg"%>" alt=""></div>
+
     <div class="col-8 h-100">
       <div class="row h-100">
         <div class="col">
@@ -12,9 +13,15 @@
                   <p class="card-text fs-5 text-secondary "><%= @listing.availability ? "Available" : "Not available"%></p>
                 </div>
                 <div class="d-flex align-items-center gap-2 p-2">
-                  <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                    Send request
-                  </button>
+                  <%if @this_request && @this_request.user_id == current_user.id%>
+                    <button type="button" class="btn btn-outline-success disabled" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                      Sent
+                    </button>
+                  <%else%>
+                    <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                      Send request
+                    </button>
+                  <%end%>
                   <button type="button" class="btn btn-outline-info">
                     <i class="fa-regular fa-bookmark "></i>
                   </button>
@@ -25,7 +32,7 @@
                 <p class="card-text fs-5 "></p>
               </div>
               <div class="d-flex align-items-center justify-content-between">
-                <p class="card-text fs-5 text-secondary">$12/Hour</p>
+                <p class="card-text fs-5 text-secondary">$<%=@listing.price%>/Hour</p>
                 <p class="card-text fs-5 text-secondary"><small><%=@listing.created_at.strftime("%F")%></small></p>
               </div>
             </div>
@@ -36,22 +43,32 @@
   </div>
   <!-- Button trigger modal -->
   <!-- Modal -->
-  <div class="modal fade"  id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal fade"  id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-controller="request">
     <div class="modal-dialog border border-danger">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Add bookmark</h5>
+          <h5 class="modal-title" id="exampleModalLabel">Send a request</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          <form action="/bookmarks/" method="post">
+
+          <!--<form action="/bookmarks/" method="post">
             <label for="comment" class="mb-2"> Message: </label>
-            <input type="text" name="comment" id="comment" class="form-control border border-primary">
+            <input type="text" name="request[message]" id="comment" class="form-control border border-primary">
             <%=hidden_field(:listing, :id)%>
+            <%=hidden_field(:user, :id)%>
             <div class="modal-footer">
               <button type="submit" class="btn btn-outline-primary">Send</button>
             </div>
-          </form>
+          </form>-->
+          <%= simple_form_for @request do |f| %>
+            <%= f.input :message%>
+            <%= f.hidden_field :listing_id, value: @listing.id %>
+            <%= f.hidden_field :user_id, value: current_user.id %>
+            <div class="modal-footer">
+              <%= f.submit "Send", class: "btn btn-outline-primary" %>
+            </div>
+          <% end %>
         </div>
       </div>
     </div>

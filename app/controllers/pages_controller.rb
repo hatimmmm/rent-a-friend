@@ -7,4 +7,8 @@ class PagesController < ApplicationController
     @requests = Request.where(listing_id: @listings.pluck(:id))
 
   end
+
+  def profiles
+    @user = current_user
+  end
 end

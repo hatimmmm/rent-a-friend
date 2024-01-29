@@ -1,11 +1,11 @@
-<div class="container p-5 bg-danger w-50 mt-3">
-  <h1 class="text-light">Create a listing</h1>
-  <%=simple_form_for @listing do |f|%>
+<div class="container p-5 bg-danger w-50 mt-3 border border-3 border-primary">
+  <h1 class="text-light"> Edit listing</h1>
+  <%=simple_form_for @listing, method: :patch do |f|%>
     <%=f.input :title, class: "form-control border border-danger"%>
     <%=f.label :content, "description"%>
     <%=f.text_area :content, class: "form-control border border-danger"%>
     <%=f.input :price ,class: "border border-outline-danger"%>
     <%=f.input :availability%>
-    <%=f.submit :create, class: "btn btn-primary"%>
+    <%=f.submit :update, class: "btn btn-primary"%>
   <%end%>
 </div>

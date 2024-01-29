@@ -3,13 +3,22 @@ class RequestsController < ApplicationController
 
   def create
     @request = Request.new(request_params)
-    @request.save!
+    @request.user = current_user
+    @request.save
     redirect_to listing_path(@request.listing)
 
   end
 
   def destroy
     @request.destroy
+    flash[:notice] = "Request successfully deleted."
+    redirect_to dashboard_path
+  end
+
+  def accept
+    @request = Request.find(params[:id])
+    @request.accepted = true
+    @request.save
     redirect_to dashboard_path
   end
 
@@ -20,6 +29,6 @@ class RequestsController < ApplicationController
   end
 
   def request_params
-    params.require(:request).permit(:message, :user_id, :listing_id)
+    params.require(:request).permit(:message, :listing_id)
   end
 end

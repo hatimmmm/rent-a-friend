@@ -4,9 +4,13 @@ class ListingsController < ApplicationController
     end
 
     def show
+        @review = Review.new
+
         @listing = Listing.find(params[:id])
         @request = Request.new
+        @this_request = @listing.requests.find_by(user_id: current_user.id)
         @user = current_user
+
     end
 
     def new
@@ -30,13 +34,15 @@ class ListingsController < ApplicationController
     def update
         @listing = Listing.find(params[:id])
         @listing.update(listing_params)
+        flash[:notice] = "Listing successfully updated."
         redirect_to listing_path(@listing)
     end
 
     def destroy
         @listing = Listing.find(params[:id])
         @listing.destroy
-        redirect_to listings_path
+        flash[:notice] = "Listing successfully deleted."
+        redirect_to dashboard_path
     end
 
     private

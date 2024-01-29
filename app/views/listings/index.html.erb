@@ -12,10 +12,8 @@
         <% end %>
 =======
 <div class="container d-flex flex-wrap align-items-center bg-white gap-3 justify-content-center">
-<h1 class="py-5 w-100 text-center ">Available friends</h1>
-
+  <h1 class="py-5 w-100 text-center ">Available friends</h1>
   <% @listings.each do |listing| %>
-
     <div class="card mb-3 border border-danger bg-light text-primary p-3 shadow" style="width: 300px;">
       <img class="card-img-top object-fit-fill border border-primary mb-3" style="height: 200px" src="<%= listing.image_url %>" alt="Card image cap">
       <div class="card-body ">
@@ -23,7 +21,12 @@
         <div></div>
         <p class="card-text d-inline-block text-truncate" style="max-width: 250px;"><%= listing.content %></p>
         <p class="card-text">$<%=listing.price%> /Hour</p>
-        <a href="listings/<%=listing.id%>" class="btn btn-primary w-100 " >Request</a>
+        <a href="listings/<%=listing.id%>" class="btn btn-primary w-100 mb-3 " >Request</a>
+        <div class=" d-flex gap-2 align-items-center mb-2">
+          <div style="height: 25px; width:25px;"><img class="rounded-circle w-100 h-100 object-fit-cover"src="<%=listing.user.avatar_url%>" alt=""></div>
+          <small class="text-muted"><%=listing.user.full_name%></small></div>
+        <p class="card-text w-100 text-end text-secondary"><small><%=listing.created_at.to_date%></small></p>
+
       </div>
     </div>
   <% end %>

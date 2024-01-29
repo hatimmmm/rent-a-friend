@@ -3,8 +3,9 @@ class PagesController < ApplicationController
   end
   def dashboard
     @user = current_user
-    @listings = Listing.where(user_id: current_user.id)
+    @listings = @user.listings
     @requests = Request.where(listing_id: @listings.pluck(:id))
+    @reviews = @user.reviews
 
   end
 

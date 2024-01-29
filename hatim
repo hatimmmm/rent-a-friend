@@ -1,0 +1,300 @@
+[33mcommit 74336a7f77d4cdd7e22fa369ada503b2868edb81[m[33m ([m[1;36mHEAD -> [m[1;32mhatim[m[33m)[m
+Merge: a6fb712 47b75c6
+Author: hatim ourrach <ourrachhatim0@gmail.com>
+Date:   Sat Jan 27 17:49:52 2024 +0100
+
+    solved
+
+[33mcommit 47b75c6aefcdb87f39f219f591b9df0dad6ab90e[m[33m ([m[1;31morigin/master[m[33m)[m
+Author: Ilyass Julien <153451399+AgentSmithScript@users.noreply.github.com>
+Date:   Mon Jan 29 00:19:47 2024 +0100
+
+    Ilyass 1st (#15)
+    
+    * request-controller-1
+    
+    * added permits to requests controller
+    
+    * listings-controller-1st
+    
+    * changed-create-ruby-controllers
+    
+    * working
+    
+    * homepage
+    
+    * Update home.html.erb
+    
+    * profile
+    
+    * profile22
+    
+    * profile 75%
+    
+    * Delete db/migrate/20240123102312_devise_create_users.rb
+    
+    * Delete db/migrate/20240123134619_create_requests.rb
+    
+    ---------
+    
+    Co-authored-by: hatimmmm <78708038+hatimmmm@users.noreply.github.com>
+
+[33mcommit a6fb712202c7781f80143472039472cad4d36bbf[m[33m ([m[1;31morigin/hatim[m[33m)[m
+Author: hatim ourrach <ourrachhatim0@gmail.com>
+Date:   Sat Jan 27 17:34:13 2024 +0100
+
+    some improvements
+
+[33mcommit fe7aef3cde5bd8bdf735503dfc2076811e1c20d6[m
+Author: hatimmmm <78708038+hatimmmm@users.noreply.github.com>
+Date:   Fri Jan 26 16:30:27 2024 +0100
+
+    Hatim (#14)
+    
+    * fixed request migration/schema, seeds, listing and some other suff
+    
+    * bunch of stuff added
+    
+    * today's work
+    
+    * added request behaviour/ review
+    
+    * added bunch of stuff again
+
+[33mcommit c25c6d9adee25239a8d8625a6be17b4e54c44180[m
+Author: hatim ourrach <ourrachhatim0@gmail.com>
+Date:   Fri Jan 26 16:15:53 2024 +0100
+
+    hard coded reviews
+
+[33mcommit 43369230be01791827ae4708b75bb10687b609d0[m[33m ([m[1;32mmaster[m[33m)[m
+Author: hatim ourrach <ourrachhatim0@gmail.com>
+Date:   Fri Jan 26 15:49:31 2024 +0100
+
+    added bunch of stuff again
+
+[33mcommit 56a960c4cd5851fa781bc1a0378c8d4be5a18125[m
+Author: hatimmmm <78708038+hatimmmm@users.noreply.github.com>
+Date:   Fri Jan 26 13:26:53 2024 +0100
+
+    Hatim (#13)
+    
+    * fixed request migration/schema, seeds, listing and some other suff
+    
+    * bunch of stuff added
+    
+    * today's work
+    
+    * added request behaviour/ review
+
+[33mcommit d9cb58c74d9de149d90712750601269d4fe260f5[m
+Author: hatim ourrach <ourrachhatim0@gmail.com>
+Date:   Fri Jan 26 12:53:07 2024 +0100
+
+    added request behaviour/ review
+
+[33mcommit deb907f0bd1e07a9a73fc8e5c1d89e779d3a774a[m
+Author: hatimmmm <78708038+hatimmmm@users.noreply.github.com>
+Date:   Thu Jan 25 17:28:32 2024 +0100
+
+    Hatim (#11)
+    
+    * fixed request migration/schema, seeds, listing and some other suff
+    
+    * bunch of stuff added
+    
+    * today's work
+
+[33mcommit fc2d0ca435c01782d97c998e5e58896ba8555054[m
+Author: hatim ourrach <ourrachhatim0@gmail.com>
+Date:   Thu Jan 25 17:27:36 2024 +0100
+
+    today's work
+
+[33mcommit 15584696f9661009c8c7095e06a87602bd7eed5f[m
+Author: Ilyass Julien <153451399+AgentSmithScript@users.noreply.github.com>
+Date:   Thu Jan 25 16:46:59 2024 +0100
+
+    Ilyass 1st (#10)
+    
+    * request-controller-1
+    
+    * added permits to requests controller
+    
+    * listings-controller-1st
+    
+    * changed-create-ruby-controllers
+    
+    * working
+    
+    * homepage
+    
+    * Update home.html.erb
+    
+    ---------
+    
+    Co-authored-by: hatimmmm <78708038+hatimmmm@users.noreply.github.com>
+
+[33mcommit 8e89dfaf6efaed383678362720af5c5d3e635b5c[m
+Merge: a7f81bd 1558469
+Author: hatim ourrach <ourrachhatim0@gmail.com>
+Date:   Thu Jan 25 16:46:16 2024 +0100
+
+    Merge branch 'master' of github.com:hatimmmm/rent-a-friend into hatim
+
+[33mcommit 4329c6005b2f37d37e12a4d3ff2f71fbc4412f86[m
+Author: Ilyass Julien <153451399+AgentSmithScript@users.noreply.github.com>
+Date:   Thu Jan 25 14:05:16 2024 +0100
+
+    Ilyass 1st (#6)
+    
+    * request-controller-1
+    
+    * added permits to requests controller
+    
+    * listings-controller-1st
+    
+    * changed-create-ruby-controllers
+    
+    * working
+
+[33mcommit a58101e34f40ca9a8647d3cd3a69402871722348[m
+Author: Ritz <106168141+ghitacodes@users.noreply.github.com>
+Date:   Thu Jan 25 14:04:49 2024 +0100
+
+    Ghita2 (#9)
+    
+    * Seeds
+    
+    * Seeds up and running
+    
+    * Conflict fixed
+    
+    * Working on index view / Need listing controller
+
+[33mcommit a7f81bd9170623370574f86de782a87d7fa33d67[m
+Merge: 8aa30d5 4329c60
+Author: hatim ourrach <ourrachhatim0@gmail.com>
+Date:   Thu Jan 25 13:52:12 2024 +0100
+
+    conflict solved
+
+[33mcommit 3d581650dfce02efdc26903b36a50f633196be2b[m
+Author: hatimmmm <78708038+hatimmmm@users.noreply.github.com>
+Date:   Thu Jan 25 11:56:38 2024 +0100
+
+    Hatim (#8)
+    
+    * fixed request migration/schema, seeds, listing and some other suff
+    
+    * bunch of stuff added
+
+[33mcommit 8aa30d545a9282a38447eb4a33fc222bf5a433b3[m
+Merge: 385310b 1d0dbf2
+Author: hatim ourrach <ourrachhatim0@gmail.com>
+Date:   Thu Jan 25 11:33:57 2024 +0100
+
+    Merge branch 'master' of github.com:hatimmmm/rent-a-friend into hatim
+
+[33mcommit 385310bcab8e09418b3f785aa4a83e4a7e973293[m
+Author: hatim ourrach <ourrachhatim0@gmail.com>
+Date:   Thu Jan 25 11:32:34 2024 +0100
+
+    bunch of stuff added
+
+[33mcommit 1d0dbf2281cdcc5233c51ce2a1e7ef8be4a7e25b[m
+Author: hatimmmm <78708038+hatimmmm@users.noreply.github.com>
+Date:   Wed Jan 24 13:41:09 2024 +0100
+
+    fixed request migration/schema, seeds, listing and some other suff (#7)
+
+[33mcommit 11fa55973a1bbbcb3fdb85cbd5ab66f549cc7b7c[m
+Author: hatim ourrach <ourrachhatim0@gmail.com>
+Date:   Wed Jan 24 12:21:23 2024 +0100
+
+    fixed request migration/schema, seeds, listing and some other suff
+
+[33mcommit 4854ecca159d93f6c638c81068a8e0229021ab2f[m
+Author: hatim ourrach <ourrachhatim0@gmail.com>
+Date:   Tue Jan 23 23:14:05 2024 +0100
+
+    fixed some stuff here and there bcuz  i was bored, nothing much tho
+
+[33mcommit 88355ec606759838f2c2852a1614bd8eea2020d8[m
+Merge: 85ee4ae acc5c06
+Author: hatim ourrach <ourrachhatim0@gmail.com>
+Date:   Tue Jan 23 19:35:15 2024 +0100
+
+    Merge branch 'master' of github.com:hatimmmm/rent-a-friend into hatim
+
+[33mcommit acc5c064ee3b7afb5daf5f68a504b7802dfeadac[m
+Author: Ritz <106168141+ghitacodes@users.noreply.github.com>
+Date:   Tue Jan 23 17:55:26 2024 +0100
+
+    Seeds (#5)
+    
+    rat is banned
+
+[33mcommit d0320c9b6f4b9c6931a2bf34301ca399f61c37ad[m
+Author: hatimmmm <78708038+hatimmmm@users.noreply.github.com>
+Date:   Tue Jan 23 17:33:23 2024 +0100
+
+    implemented authentification (#4)
+    
+    yep
+
+[33mcommit 85ee4ae8cadbf608de81a796322a3ff66cd657ca[m
+Merge: 54f7861 d0320c9
+Author: hatim ourrach <ourrachhatim0@gmail.com>
+Date:   Tue Jan 23 16:44:36 2024 +0100
+
+    conflit resolve
+
+[33mcommit 54f7861394b7057e0221eb62bf946185db97f7fd[m
+Author: hatim ourrach <ourrachhatim0@gmail.com>
+Date:   Tue Jan 23 16:30:53 2024 +0100
+
+    implemented authentification
+
+[33mcommit da7ad040a510ddd87cee6771fd10e6a2917818b5[m
+Author: Ilyass Julien <153451399+AgentSmithScript@users.noreply.github.com>
+Date:   Tue Jan 23 15:33:59 2024 +0100
+
+    request-controller-1 (#3)
+    
+    * request-controller-1
+    
+    * added permits to requests controller
+
+[33mcommit aa961348b0bee14fc011b4a6eb46033cbd3b6235[m
+Author: Ritz <106168141+ghitacodes@users.noreply.github.com>
+Date:   Tue Jan 23 15:14:54 2024 +0100
+
+    Added foreign keys, validation and routes (#2)
+    
+    * Added foreign keys, validation and routes
+    
+    * added relationship clarification
+
+[33mcommit c43f3ac5a10e602ad7a005d989e52da130ab54e0[m
+Merge: f61d289 f293be7
+Author: hatimmmm <78708038+hatimmmm@users.noreply.github.com>
+Date:   Tue Jan 23 13:31:14 2024 +0100
+
+    Merge pull request #1 from hatimmmm/ghita
+    
+    first model addition
+
+[33mcommit f293be7ae368ff68466d45e79c7d650ed5a19a2f[m
+Author: Ghita Dahoune <ghita.dahoune96@gmail.com>
+Date:   Tue Jan 23 12:55:36 2024 +0100
+
+    first model addition
+
+[33mcommit f61d28981521808b9f0bb12e99243f4c3b50cc46[m
+Author: hatim ourrach <ourrachhatim0@gmail.com>
+Date:   Mon Jan 22 12:35:02 2024 +0100
+
+    first commit
+
+[33mcommit cd111f006d725124e84f21bb

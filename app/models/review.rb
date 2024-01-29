@@ -1,6 +1,10 @@
 class Review < ApplicationRecord
-    belongs_to :user, foreign_key: "user_id"
-    validates :user_id, presence: true, uniqueness: true
+    belongs_to :user
+    validates :content, presence: true
     validates :rating, presence: true
+
+    def author
+        User.find_by(id: self.user_id)
+    end
 
 end

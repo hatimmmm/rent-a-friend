@@ -113,7 +113,7 @@ Listing.create({
 Listing.create({
                  title: "Juan",
                  content: "I am not a horse. Or hispanic. I am only here because of thieves. I mean friends. I mean--",
-                 image_url: "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/42f36d6d-34cc-4edf-906d-4b23f63c860f/d5b1060-421ae1b9-888d-4e5b-9a79-168f34caa387.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzQyZjM2ZDZkLTM0Y2MtNGVkZi05MDZkLTRiMjNmNjNjODYwZlwvZDViMTA2MC00MjFhZTFiOS04ODhkLTRlNWItOWE3OS0xNjhmMzRjYWEzODcuanBnIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.5Otwc6wmc0TqOhaTQphSrW8eTQrreOhLOOpc28c3pi4",
+                 image_url: "https://i.kym-cdn.com/entries/icons/facebook/000/035/644/juancover.jpg",
                  user_id: 1,
                  price: 16
                })
@@ -171,7 +171,7 @@ Request.create!({
                  message: "Please please please please please",
                  listing_id: 6,
                  user_id: 1,
-
+                 
                })
 
 Request.create!({

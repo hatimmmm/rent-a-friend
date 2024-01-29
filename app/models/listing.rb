@@ -19,5 +19,4 @@ class Listing < ApplicationRecord
   def reviews
     Review.where(listing_id: self.id)
   end
-
 end

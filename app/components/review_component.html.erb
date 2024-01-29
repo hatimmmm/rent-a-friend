@@ -1,12 +1,12 @@
-
-  <h4>Latest reviews</h4>
+ 
   <div class="card border-success mb-3 w-100" ">
     <div class="card-header bg-transparent border-success d-flex justify-content-start align-items-center gap-2">
       <div class="" style="height: 30px;width:30px">
-        <img class="w-100 h-100 rounded-circle border" src="<%=@review.author.avatar_url%>" alt="">
+        <img class="w-100 h-100 rounded-circle border" src="<%=@review.customer.avatar_url%>" alt="">
       </div>
       <div>
-        <h5 class="card-title"><%=@review.author.first_name%> <%=@review.author.last_name%></h5>
+        <h5 class="card-title"><%=@review.customer.full_name%></h5>
+
       </div>
     </div>
     <div class="card-body">

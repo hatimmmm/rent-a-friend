@@ -1,51 +1,45 @@
 <div class="d-flex flex-row">
   <div class="h-100"><%=render "shared/sidebar" %></div>
   <div class="d-flex flex-column me-3">
-    <div class="d-flex justify-content-between w-100 my-3 mx-4">
-      <div class="w-25 px-3 bg-danger rounded">
+    <div class="d-flex justify-content-between w-100 my-3 mx-4 gap-3">
+      <div class="px-3 border bg-light border-danger rounded g-3 w-50">
         <h4 class="text-primary py-2">Bio</h4>
         <p class="text-primary">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.</p>
       </div>
-      <div class="w-25 bg-danger px-2 rounded">
+      <div class="bg-light border border-danger px-2 rounded">
         <h4 class="text-primary py-2 ">Things I like</h4>
         <a class="text-primary my-2" href="https://www.youtube.com/watch?v=Ulz7r_uA6xc&ab_channel=AdultSwim">Human music 🎵</a> <br>
         <a class="text-primary my-2" href="https://www.imdb.com/title/tt0114814/">Usual Suspect 🎥</a> <br>
         <a class="text-primary my-2" href="https://www.goodreads.com/book/show/4865.How_to_Win_Friends_and_Influence_People"> How to make friends... 📖</a>
       </div>
-      <div class="w-25 bg-danger me-5 p-3 d-flex flex-row justify-content-evenly d-inline">
-        <p class="text-primary">Introvert</p>
-          <div class=" progress-bar w-100 bg-light border border-dark rounded">
-            <div class="pl-3 w-25 h-100"><span class="w-25 h-100 d-inline rounded"><p class="bg-dark">||</p></span></div>
-          </div>
-        <p class="text-primary">Extrovert</p>
+      <div class="border bg-light border-danger me-5 p-3 d-flex flex-column justify-content-evenly align-items-center">
+        <h5 class="w-100">Average rating</h5>
+        <div class="d-flex align-items-center gap-2">
+                  <h1><i class="fa-solid fa-star text-info"></i></h1>
+
+                  <h1 class="text-primary"><%= @average_rating%></h1>
+
+        </div>
       </div>
     </div>
-    <div class="d-flex justify-content-center h-100 my-6 mx-1">
-      <div id="carouselExampleIndicators" class="carousel slide w-100 h-75 m-3 d-flex rounded border border-dark" data-ride="carousel">
-        <div class="h-100 carousel-inner">
-          <div class="carousel-item active h-100 w-100">
-            <img class="d-block w-100 h-100" src="https://st4.depositphotos.com/13194036/19656/i/450/depositphotos_196568520-stock-photo-undercover-male-agent-sunglasses-doing.jpg" alt="First slide">
-          </div>
-          <div class="carousel-item active">
-            <img class="d-block w-100 h-100" src="https://st4.depositphotos.com/13194036/19656/i/450/depositphotos_196568520-stock-photo-undercover-male-agent-sunglasses-doing.jpg" alt="Second slide">
-          </div>
-          <div class="carousel-item w-100 h-100 active">
-            <img class="d-block w-100 h-100" src="https://st4.depositphotos.com/13194036/19656/i/450/depositphotos_196568520-stock-photo-undercover-male-agent-sunglasses-doing.jpg" alt="Third slide">
-          </div>
+        <h1 class="ms-3">Gallery</h1>
+    <div class="gallery p-3">
+        <div class="gallery-item border border-danger shadow">
+          <img src="https://media.newyorker.com/photos/5b96bac5db10027e03a43bf1/master/w_1920,c_limit/Lambert_Bojack_Horseman_01.jpg" class="d-block w-100 h-100 object-fix-cover" alt="...">
         </div>
-        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="sr-only">Next</span>
-        </a>
-      </div>
+        <div class="gallery-item border border-danger shadow">
+          <img src="https://pbs.twimg.com/media/Bx4v1OVIIAA3AKH.jpg" alt="...">
+        </div>
+        <div class="gallery-item border border-danger shadow">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTR3eZxX4r50qoPeHkHKDDZLJ_1WvU71x569A&usqp=CAU" class="d-block w-100 h-100 object-fix-cover" alt="...">
+        </div>
+        <div class="gallery-item border border-danger shadow">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCBnr-oa9wGtnDjIpZxc6zs_22uEA7_I0O-w&usqp=CAU" class="d-block w-100 h-100 object-fix-cover" alt="...">
+        </div>
     </div>
     <script>
       $(document).ready(function(){
         $('.carousel').carousel();
       });
-  </script>
-</div>
+    </script>
+  </div>

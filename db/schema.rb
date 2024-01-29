@@ -41,8 +41,10 @@ ActiveRecord::Schema[7.1].define(version: 2024_01_25_193733) do
     t.string "comment"
     t.integer "rating"
     t.bigint "user_id", null: false
+    t.bigint "listing_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["listing_id"], name: "index_reviews_on_listing_id"
     t.index ["user_id"], name: "index_reviews_on_user_id"
   end
 
@@ -66,5 +68,6 @@ ActiveRecord::Schema[7.1].define(version: 2024_01_25_193733) do
   add_foreign_key "listings", "users"
   add_foreign_key "requests", "listings"
   add_foreign_key "requests", "users"
+  add_foreign_key "reviews", "listings"
   add_foreign_key "reviews", "users"
 end

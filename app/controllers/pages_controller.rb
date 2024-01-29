@@ -5,11 +5,12 @@ class PagesController < ApplicationController
     @user = current_user
     @listings = @user.listings
     @requests = Request.where(listing_id: @listings.pluck(:id))
-    @reviews = @user.reviews
+    @reviews = Review.where(listing_id: @listings.pluck(:id))
 
   end
 
-  def profiles
+  def profile
     @user = current_user
+    @average_rating = @user.average_rating
   end
 end

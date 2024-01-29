@@ -6,6 +6,7 @@ class PagesController < ApplicationController
     @listings = @user.listings
     @requests = Request.where(listing_id: @listings.pluck(:id))
     @reviews = Review.where(listing_id: @listings.pluck(:id))
+
   end
 
   def profile
